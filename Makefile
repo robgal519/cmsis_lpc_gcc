@@ -53,7 +53,7 @@ system_LPC17xx.c \
 main.c \
 Drivers/UART_LPC17xx.c \
 Drivers/PIN_LPC17xx.c \
-DRivers/GPDMA_LPC17xx.c \
+Drivers/GPDMA_LPC17xx.c \
 
 # C defines
 C_DEFS =  \
