@@ -4,10 +4,8 @@
 MEMORY
 {
   FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 512K
-  RAM (rwx) : ORIGIN = 0x100000C8, LENGTH = 0x7F38
-
-  USB_RAM(rwx) : ORIGIN = 0x2007C000, LENGTH = 16K
-  ETH_RAM(rwx) : ORIGIN = 0x20080000, LENGTH = 16K
+  RAM (rwx) : ORIGIN = 0x10000000, LENGTH = 32K
+  SRAM (rwx) : ORIGIN = 0x2007C000, LENGTH = 32K
 }
 
 /* Linker script to place sections and symbol values. Should be used together
@@ -113,7 +111,7 @@ SECTIONS
         /* All data end */
         __data_end__ = .;
 
-    } > RAM
+    } > SRAM
 
     .bss :
     {

@@ -2,6 +2,9 @@
 #include "cmsis_os.h"
 #include "lpc17xx.h"
 #include "system_LPC17xx.h"
+#include "httpserver-netconn.h"
+#include "lwip.h"
+#include "task.h"
 
 void StartDefaultTask(void *argument);
 
@@ -12,7 +15,7 @@ int main() {
   const osThreadAttr_t defaultTask_attributes = {
       .name = "defaultTask",
       .priority = (osPriority_t)osPriorityIdle,
-      .stack_size = 1024 * 4};
+      .stack_size = 128 };
   osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
   osKernelStart();
   while (1)
@@ -20,9 +23,24 @@ int main() {
 }
 
 void StartDefaultTask(void *argument) {
-  int i = 0;
-  while (1) {
-    i++;
+
+  // sys_thread_new("BME280", BME_task, NULL,
+  //                DEFAULT_THREAD_STACKSIZE, osPriorityNormal);
+  // /* init code for LWIP */
+  MX_LWIP_Init();
+  /* USER CODE BEGIN StartDefaultTask */
+  register_endpoint(GET, "/alive", alive_handler);
+  http_server_netconn_init();
+  //
+
+
+  /* Infinite loop */
+  for (;;) {
+
+    poll();
   }
-  /* USER CODE END StartDefaultTask */
+}
+
+uint32_t HAL_GetTick(){
+  return xTaskGetTickCount();
 }
