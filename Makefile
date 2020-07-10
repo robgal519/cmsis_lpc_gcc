@@ -54,6 +54,16 @@ main.c \
 Drivers/UART_LPC17xx.c \
 Drivers/PIN_LPC17xx.c \
 Drivers/GPDMA_LPC17xx.c \
+Middleware/FreeRTOS/Source/croutine.c \
+Middleware/FreeRTOS/Source/event_groups.c \
+Middleware/FreeRTOS/Source/list.c \
+Middleware/FreeRTOS/Source/queue.c \
+Middleware/FreeRTOS/Source/stream_buffer.c \
+Middleware/FreeRTOS/Source/tasks.c \
+Middleware/FreeRTOS/Source/timers.c \
+Middleware/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c \
+Middleware/FreeRTOS/Source/portable/GCC/ARM_CM3/port.c \
+Middleware/FreeRTOS/Source/portable/MemMang/heap_4.c \
 
 # C defines
 C_DEFS =  \
@@ -64,9 +74,13 @@ C_DEFS =  \
 C_INCLUDES =  -I. \
 -ICMSIS/Core/Include \
 -ICMSIS/Driver/Include \
+-ICMSIS/RTOS2/Include \
+-ICMSIS/RTOS/Include \
 -IDrivers/Config \
--IDrivers
-
+-IDrivers \
+-IMiddleware/FreeRTOS/Source/include \
+-IMiddleware/FreeRTOS/Source/CMSIS_RTOS_V2 \
+-IMiddleware/FreeRTOS/Source/portable/GCC/ARM_CM3 \
 
 
 CFLAGS = $(MCU) $(C_DEFS) $(C_INCLUDES) $(OPT) -Wall -fdata-sections -ffunction-sections 
