@@ -11,7 +11,7 @@ TARGET = test_www_in_rtos
 # debug build?
 DEBUG = 1
 # optimization
-OPT = -Os
+OPT = -O0
 
 
 #######################################
@@ -56,6 +56,7 @@ Drivers/PIN_LPC17xx.c \
 Drivers/GPDMA_LPC17xx.c \
 Drivers/GPIO_LPC17xx.c \
 Drivers/EMAC_LPC17xx.c \
+Drivers/PHY_LAN8720.c \
 Middleware/FreeRTOS/Source/croutine.c \
 Middleware/FreeRTOS/Source/event_groups.c \
 Middleware/FreeRTOS/Source/list.c \
@@ -150,7 +151,7 @@ Middleware/LwIP/src/apps/mqtt/mqtt.c \
 httpserver-netconn.c \
 ethernetif.c \
 lwip.c \
-Drivers/PHY_LAN8720.c \
+
 
 # C defines
 C_DEFS =  \
@@ -219,7 +220,7 @@ $(BUILD_DIR)/%.o: %.s Makefile | $(BUILD_DIR)
 	$(AS) -c $(CFLAGS) $< -o $@
 
 $(BUILD_DIR)/$(TARGET).elf: $(OBJECTS) Makefile
-	$(CC) $(OBJECTS) $(LDFLAGS) -o $@
+	$(CC) $(OBJECTS) $(LDFLAGS) -o $@ 
 	$(SZ) $@
 
 $(BUILD_DIR)/%.hex: $(BUILD_DIR)/%.elf | $(BUILD_DIR)

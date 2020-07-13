@@ -874,10 +874,10 @@ static uint32_t GetRxFrameSize (void) {
   }
 
   info = Rx_Stat[idx].Info;
-  if (!(info & RINFO_LAST_FLAG) || (info & RINFO_ERR_MASK)) {
-    /* Error, this block is invalid */
-    return (0xFFFFFFFFU);
-  }
+  // if (!(info & RINFO_LAST_FLAG) || (info & RINFO_ERR_MASK)) {
+  //   /* Error, this block is invalid */
+  //   return (0xFFFFFFFFU);
+  // }
 
   return ((info & RINFO_SIZE) - 3U);
 }

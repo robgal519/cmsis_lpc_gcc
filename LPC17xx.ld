@@ -6,7 +6,7 @@ MEMORY
   FLASH (rx) : ORIGIN = 0x00000000, LENGTH = 512K
   RAM (rwx) : ORIGIN = 0x10000000, LENGTH = 32K
   SRAM (rwx) : ORIGIN = 0x2007C000, LENGTH = 32K
-}
+  }
 
 /* Linker script to place sections and symbol values. Should be used together
  * with other linker script that defines memory regions FLASH and RAM.
@@ -111,7 +111,7 @@ SECTIONS
         /* All data end */
         __data_end__ = .;
 
-    } > SRAM
+    } > RAM
 
     .bss :
     {

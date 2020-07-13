@@ -1,20 +1,21 @@
-/* -------------------------------------------------------------------------- 
- * Copyright (c) 2013-2016 Arm Limited (or its affiliates). All 
- * rights reserved.
+/* -----------------------------------------------------------------------------
+ * Copyright (c) 2013-2016 ARM Ltd.
  *
- * SPDX-License-Identifier: Apache-2.0
+ * This software is provided 'as-is', without any express or implied warranty.
+ * In no event will the authors be held liable for any damages arising from
+ * the use of this software. Permission is granted to anyone to use this
+ * software for any purpose, including commercial applications, and to alter
+ * it and redistribute it freely, subject to the following restrictions:
  *
- * Licensed under the Apache License, Version 2.0 (the License); you may
- * not use this file except in compliance with the License.
- * You may obtain a copy of the License at
+ * 1. The origin of this software must not be misrepresented; you must not
+ *    claim that you wrote the original software. If you use this software in
+ *    a product, an acknowledgment in the product documentation would be
+ *    appreciated but is not required.
  *
- * www.apache.org/licenses/LICENSE-2.0
+ * 2. Altered source versions must be plainly marked as such, and must not be
+ *    misrepresented as being the original software.
  *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an AS IS BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
+ * 3. This notice may not be removed or altered from any source distribution.
  *
  * $Date:        20. April 2016
  * $Revision:    V2.4.1
@@ -310,11 +311,11 @@
 // </e>
 
 // <e> UART0 (Universal asynchronous receiver transmitter)
-#define RTE_UART0                       1
+#define RTE_UART0                       0
 
 //   <o> UART0_TX Pin <0=>Not used <1=>P0_2
 //   <i> UART0 Serial Output pin
-#define RTE_UART0_TX_ID                 1
+#define RTE_UART0_TX_ID                 0
 #if    (RTE_UART0_TX_ID == 0)
 #define RTE_UART0_TX_PIN_EN             0
 #elif  (RTE_UART0_TX_ID == 1)
