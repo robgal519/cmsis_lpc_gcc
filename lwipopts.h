@@ -106,7 +106,7 @@
 #define CHECKSUM_CHECK_ICMP6 0
 /*-----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
-#define MEM_SIZE (8 * 1024)
+#define MEM_SIZE (6 * 1024)
 #define MEMP_MEM_MALLOC 1
 /* USER CODE END 1 */
 
