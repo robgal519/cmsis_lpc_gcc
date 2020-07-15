@@ -106,8 +106,11 @@
 #define CHECKSUM_CHECK_ICMP6 0
 /*-----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
-#define MEM_SIZE (6 * 1024)
+#define MEM_USE_POOLS      0
+#define MEM_LIBC_MALLOC                 0
 #define MEMP_MEM_MALLOC 1
+#define MEM_SIZE  (31 * 1024)
+#define LWIP_RAM_HEAP_POINTER  ( (void *)0x2007C000 )
 /* USER CODE END 1 */
 
 #ifdef __cplusplus
