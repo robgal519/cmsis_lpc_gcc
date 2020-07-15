@@ -119,7 +119,7 @@ SECTIONS
         *(.bss*)
         *(COMMON)
         __bss_end__ = .;
-    } > SRAM
+    } > RAM
     
     .heap :
     {

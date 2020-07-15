@@ -172,12 +172,12 @@ int main() {
   const osThreadAttr_t defaultTask_attributes = {
       .name = "defaultTask",
       .priority = (osPriority_t)osPriorityIdle,
-      .stack_size = 128 };
+      .stack_size = 512 };
   osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
     const osThreadAttr_t bme_thread_attributes = {
   .name = "bme_thread",
   .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = 128
+  .stack_size = 512
   };
   osThreadNew(BME_task, NULL, &bme_thread_attributes);
   osKernelStart();
